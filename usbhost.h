@@ -122,6 +122,10 @@ typedef SPi< P14, P13, P12, P15 > spi;
 typedef SPi< P36, P37, P35, P1 > spi;
 #elif defined(ARDUINO_XIAO_ESP32S3)
 typedef SPi< P7, P9, P8, P44 > spi;
+#elif defined(ARDUINO_ESP32S2_DEV) || defined(CONFIG_IDF_TARGET_ESP32S2)
+typedef SPi< P12, P11, P13, P10 > spi;
+#elif defined(ARDUINO_ESP32S3_DEV) || defined(CONFIG_IDF_TARGET_ESP32S3)
+typedef SPi< P12, P11, P13, P10 > spi;
 #elif defined(ESP32)
 typedef SPi< P18, P23, P19, P5 > spi;
 #elif defined(ARDUINO_NRF52840_FEATHER) || defined(ARDUINO_NRF52840_FEATHER_SENSE)

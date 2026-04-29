@@ -52,6 +52,10 @@ typedef MAX3421e<P15, P5> MAX3421E; // ESP8266 boards
 typedef MAX3421e<P1, P14> MAX3421E; // M5Stack Core S3
 #elif defined(ARDUINO_XIAO_ESP32S3)
 typedef MAX3421e<P44, P4> MAX3421E; // ESP32 XIAO boards
+#elif defined(ARDUINO_ESP32S2_DEV) || defined(CONFIG_IDF_TARGET_ESP32S2)
+typedef MAX3421e<P10, P14> MAX3421E; // ESP32-S2 boards
+#elif defined(ARDUINO_ESP32S3_DEV) || defined(CONFIG_IDF_TARGET_ESP32S3)
+typedef MAX3421e<P10, P14> MAX3421E; // ESP32-S3 boards
 #elif defined(ESP32)
 typedef MAX3421e<P5, P17> MAX3421E; // ESP32 boards
 #elif defined(ARDUINO_Seeed_XIAO_nRF52840_Sense)
