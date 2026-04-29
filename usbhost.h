@@ -21,7 +21,7 @@ Circuits At Home, LTD
 Web      :  http://www.circuitsathome.com
 e-mail   :  support@circuitsathome.com
  */
-/* MAX3421E-based USB Host Library header file */
+/* MAX3421E-based USBHost Host Library header file */
 
 
 #if !defined(_usb_h_) || defined(_USBHOST_H_)
@@ -455,7 +455,7 @@ int8_t MAX3421e< SPI_SS, INTR >::Init() {
         regWr(rHIEN, bmCONDETIE | bmFRAMEIE); //connection detection
 
         /* check if device is connected */
-        regWr(rHCTL, bmSAMPLEBUS); // sample USB bus
+        regWr(rHCTL, bmSAMPLEBUS); // sample USBHost bus
         while(!(regRd(rHCTL) & bmSAMPLEBUS)); //wait for sample operation to finish
 
         busprobe(); //check if anything is connected
@@ -496,7 +496,7 @@ int8_t MAX3421e< SPI_SS, INTR >::Init(int mseconds) {
         regWr(rHIEN, bmCONDETIE | bmFRAMEIE); //connection detection
 
         /* check if device is connected */
-        regWr(rHCTL, bmSAMPLEBUS); // sample USB bus
+        regWr(rHCTL, bmSAMPLEBUS); // sample USBHost bus
         while(!(regRd(rHCTL) & bmSAMPLEBUS)); //wait for sample operation to finish
 
         busprobe(); //check if anything is connected
@@ -561,7 +561,7 @@ uint8_t MAX3421e< SPI_SS, INTR >::Task(void) {
         //    if( pinvalue == LOW ) {
         //        GpxHandler();
         //    }
-        //    usbSM();                                //USB state machine
+        //    usbSM();                                //USBHost state machine
         return ( rcode);
 }
 
